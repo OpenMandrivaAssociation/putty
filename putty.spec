@@ -1,37 +1,35 @@
-%define name	putty
-%define version 0.59
-%define is_snapshot	0
+%define is_snapshot     0
 
 %if %{is_snapshot}
-%define snapshot	2004-02-16
-%define release	%mkrel 1
+%define snapshot        2004-02-16
+%define release         %mkrel 1
 %endif
 %if !%{is_snapshot}
-%define release	%mkrel 1
+%define release         %mkrel 1
 %endif
 
 %define title   Putty
 %define Summary Free SSH, Telnet and Rlogin client
 
-Summary:		%Summary
-Name:			%name
-Version:		%version
-Release:		%release
-Epoch:			1
-License:		MIT
-Group:			Networking/Remote access
+Name:                   putty
+Version:                0.60
+Release:                %mkrel 1
+Epoch:                  1
+Summary:                %Summary
+License:                MIT
+Group:                  Networking/Remote access
 %if %{is_snapshot}
-URL:			http://www.tartarus.org/~simon/putty-unix/
-Source0:		%name-%version-%snapshot.tar.bz2
+URL:                    http://www.tartarus.org/~simon/putty-unix/
+Source0:                %name-%version-%snapshot.tar.bz2
 %endif
 %if !%{is_snapshot}
-URL:			http://the.earth.li/~sgtatham/putty/latest/
-Source0:		http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz
+URL:                    http://the.earth.li/~sgtatham/putty/latest/
+Source0:                http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz
 %endif
-Source1:		%name-icons.tar.bz2
-Source2:		http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz.DSA
-BuildRoot:		%_tmppath/%name-buildroot
-Buildrequires:		gtk+-devel
+Source1:                %name-icons.tar.bz2
+Source2:                http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz.DSA
+BuildRoot:              %_tmppath/%name-%{version}-%{release}-root
+Buildrequires:          gtk+-devel
 
 %description
 This is the Unix port of the popular Windows ssh client, PuTTY. It
@@ -128,5 +126,3 @@ rm -rf %buildroot
 %_miconsdir/*.png
 %_iconsdir/*.png
 %_liconsdir/*.png
-
-
