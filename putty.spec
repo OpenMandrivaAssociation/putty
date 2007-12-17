@@ -28,7 +28,6 @@ Source0:                http://the.earth.li/~sgtatham/putty/latest/%name-%versio
 %endif
 Source1:                %name-icons.tar.bz2
 Source2:                http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz.DSA
-BuildRoot:              %_tmppath/%name-%{version}-%{release}-root
 Buildrequires:          gtk+-devel
 
 %description
