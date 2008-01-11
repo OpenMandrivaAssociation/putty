@@ -71,20 +71,6 @@ rm -rf %buildroot
 prefix=%{_prefix} mandir=%{_mandir})
 
 # Menu
-mkdir -p %buildroot/%_menudir
-cat > %buildroot/%_menudir/%name << EOF
-?package(%name): \
-command="%_bindir/%name" \
-needs="X11" \
-icon="%name.png" \
-%if %mdkversion <= 1000
-section="Internet/Remote access" \
-%else
-section="Internet/Remote Access" \
-%endif
-title="%title" \
-longtitle="%Summary" xdg="true"
-EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -121,7 +107,6 @@ rm -rf %buildroot
 %defattr(0644,root,root,0755)
 %_mandir/man1/*
 %{_datadir}/applications/mandriva-%{name}.desktop
-%_menudir/*
 %_miconsdir/*.png
 %_iconsdir/*.png
 %_liconsdir/*.png
