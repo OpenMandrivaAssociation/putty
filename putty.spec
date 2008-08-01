@@ -2,10 +2,10 @@
 
 %if %{is_snapshot}
 %define snapshot        2004-02-16
-%define release         %mkrel 3
+%define release         %mkrel 4
 %endif
 %if !%{is_snapshot}
-%define release         %mkrel 3
+%define release         %mkrel 4
 %endif
 
 %define title   Putty
@@ -13,7 +13,7 @@
 
 Name:                   putty
 Version:                0.60
-Release:                %mkrel 3
+Release:                %mkrel 4
 Epoch:                  1
 Summary:                %Summary
 License:                MIT
