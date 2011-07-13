@@ -12,8 +12,8 @@
 %define Summary Free SSH, Telnet and Rlogin client
 
 Name:                   putty
-Version:                0.60
-Release:                %mkrel 4
+Version:                0.61
+Release:                %mkrel 1
 Epoch:                  1
 Summary:                %Summary
 License:                MIT
@@ -29,7 +29,7 @@ Source0:                http://the.earth.li/~sgtatham/putty/latest/%name-%versio
 Source1:                %name-icons.tar.bz2
 Source2:                http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz.DSA
 BuildRoot:              %_tmppath/%name-%{version}-%{release}-root
-Buildrequires:          gtk+-devel
+Buildrequires:          gtk+2-devel
 
 %description
 This is the Unix port of the popular Windows ssh client, PuTTY. It
@@ -48,13 +48,19 @@ other interesting things not provided by ssh in an xterm.
 %endif
 
 %build
+#gw work around build failure:
+%define optflags "%{echo "%optflags"|sed s/-Wstrict-aliasing=2//}"
 %if %{is_snapshot}
-cd unix && %make -f Makefile.gtk VER="-DSNAPSHOT=%{snapshot}" \
+cd unix 
+%configure2_5x
+%make  VER="-DSNAPSHOT=%{snapshot}"
 %endif
 %if !%{is_snapshot}
-cd unix && %make -f Makefile.gtk \
+cd unix 
+%configure2_5x
+%make
 %endif
-CC="%{__cc}" CFLAGS="%{optflags} `gtk-config --cflags` -I. -I.. -I../charset"
+
 
 # temporary man pages
 echo ".so putty.1" > pscp.1
