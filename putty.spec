@@ -1,19 +1,11 @@
 %define is_snapshot     0
 
-%if %{is_snapshot}
-%define snapshot        2004-02-16
-%define release         %mkrel 4
-%endif
-%if !%{is_snapshot}
-%define release         %mkrel 4
-%endif
-
 %define title   Putty
 %define Summary Free SSH, Telnet and Rlogin client
 
 Name:                   putty
 Version:                0.61
-Release:                %mkrel 1
+Release:                %mkrel 2
 Epoch:                  1
 Summary:                %Summary
 License:                MIT
@@ -87,7 +79,18 @@ Icon=%name
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-Internet-RemoteAccess;Network;RemoteAccess;
+Categories=GTK;Network;RemoteAccess;
+EOF
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pterm.desktop << EOF
+[Desktop Entry]
+Name=Putty Terminal
+Comment=X Terminal emulator based on Putty
+Exec=%_bindir/pterm
+Icon=%name
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;Utility;TerminalEmulator;
 EOF
 
 # icon
@@ -97,15 +100,8 @@ EOF
 %__install -D -m 644 %{name}32.png %buildroot/%_iconsdir/%name.png
 %__install -D -m 644 %{name}16.png %buildroot/%_miconsdir/%name.png
 
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
+#gw remove obsolete puttytel, same functionality is in putty:
+rm -f %buildroot{%_bindir/puttytel,%_mandir/man1/puttytel.1}
 
 %clean
 rm -rf %buildroot
@@ -117,6 +113,7 @@ rm -rf %buildroot
 %defattr(0644,root,root,0755)
 %_mandir/man1/*
 %{_datadir}/applications/mandriva-%{name}.desktop
+%{_datadir}/applications/mandriva-pterm.desktop
 %_miconsdir/*.png
 %_iconsdir/*.png
 %_liconsdir/*.png
