@@ -20,6 +20,7 @@ Source0:                http://the.earth.li/~sgtatham/putty/latest/%name-%versio
 %endif
 Source1:                %name-icons.tar.bz2
 Source2:                http://the.earth.li/~sgtatham/putty/latest/%name-%version.tar.gz.DSA
+Patch0:			putty-0.62-mdv-disable-Werror.patch
 BuildRoot:              %_tmppath/%name-%{version}-%{release}-root
 Buildrequires:          gtk+2-devel
 
@@ -38,25 +39,25 @@ other interesting things not provided by ssh in an xterm.
 %setup -q -n %name-%version
 %setup -q -T -D -a1 -n %name-%version
 %endif
+%patch0 -p1
 
 %build
+pushd unix
 #gw work around build failure:
 %define optflags "%{echo "%optflags"|sed s/-Wstrict-aliasing=2//}"
 %if %{is_snapshot}
-cd unix 
 %configure2_5x
 %make  VER="-DSNAPSHOT=%{snapshot}"
 %endif
 %if !%{is_snapshot}
-cd unix 
 %configure2_5x
 %make
 %endif
 
-
 # temporary man pages
 echo ".so putty.1" > pscp.1
 echo ".so putty.1" > psftp.1
+popd
 
 %install
 rm -rf %buildroot
