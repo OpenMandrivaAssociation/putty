@@ -4,8 +4,8 @@
 %define Summary Free SSH, Telnet and Rlogin client
 
 Name:                   putty
-Version:                0.61
-Release:                %mkrel 2
+Version:                0.62
+Release:                %mkrel 1
 Epoch:                  1
 Summary:                %Summary
 License:                MIT
@@ -94,8 +94,6 @@ Categories=GTK;Utility;TerminalEmulator;
 EOF
 
 # icon
-# Use {curly braces} here to protect the variable name.
-# ie: Is name48.png %{name}48.png or %{name48}.png?
 %__install -D -m 644 %{name}48.png %buildroot/%_liconsdir/%name.png
 %__install -D -m 644 %{name}32.png %buildroot/%_iconsdir/%name.png
 %__install -D -m 644 %{name}16.png %buildroot/%_miconsdir/%name.png
