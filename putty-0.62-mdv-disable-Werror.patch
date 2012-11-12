@@ -1,0 +1,13 @@
+Index: putty-0.62/unix/configure
+===================================================================
+--- putty-0.62.orig/unix/configure
++++ putty-0.62/unix/configure
+@@ -2992,7 +2992,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ if test "X$GCC" = Xyes; then
+-    PUTTYCFLAGS="-Wall -Werror"
++    PUTTYCFLAGS="-Wall"
+ else
+     PUTTYCFLAGS=""
+ fi
