@@ -116,3 +116,85 @@ rm -rf %buildroot
 %_miconsdir/*.png
 %_iconsdir/*.png
 %_liconsdir/*.png
+
+
+%changelog
+* Sun Dec 11 2011 Dmitry Mikhirev <dmikhirev@mandriva.org> 1:0.62-1
++ Revision: 740278
+- Removed -Werror flag
+- Update to 0.62
+
+* Mon Aug 01 2011 Götz Waschk <waschk@mandriva.org> 1:0.61-2
++ Revision: 692689
+- remove puttytel
+- add menu entry for pterm
+- fix menu category
+
+* Wed Jul 13 2011 Götz Waschk <waschk@mandriva.org> 1:0.61-1
++ Revision: 689890
+- new version
+- fix build
+- use gtk+ 2.0
+
+* Fri Aug 01 2008 Thierry Vignaud <tv@mandriva.org> 1:0.60-4mdv2009.0
++ Revision: 259363
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1:0.60-3mdv2009.0
++ Revision: 247241
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Fri Jan 11 2008 Thierry Vignaud <tv@mandriva.org> 1:0.60-1mdv2008.1
++ Revision: 148326
+- drop old menu
+- kill re-definition of %%buildroot on Pixel's request
+- kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Sat May 12 2007 David Walluck <walluck@mandriva.org> 1:0.60-1mdv2008.0
++ Revision: 26418
+- 0.60
+
+
+* Thu Jan 25 2007 Götz Waschk <waschk@mandriva.org> 0.59-1mdv2007.0
++ Revision: 113481
+- Import putty
+
+* Thu Jan 25 2007 G�tz Waschk <waschk@mandriva.org> 0.59-1mdv2007.1
+- fix doc file list
+- xdg menu
+- New version 0.59
+
+* Wed May 10 2006 Tibor Pittich <Tibor.Pittich@mandriva.org> 0.58-2mdk
+- rebuild
+- mkrel
+
+* Thu Apr 07 2005 Götz Waschk <waschk@linux-mandrake.com> 0.58-1mdk
+- New release 0.58
+
+* Tue Feb 22 2005 Götz Waschk <waschk@linux-mandrake.com> 0.57-1mdk
+- New release 0.57
+
+* Thu Oct 28 2004 G�tz Waschk <waschk@linux-mandrake.com> 0.56-1mdk
+- don't bzip2 source for sig checks
+- add signature
+- New release 0.56
+
+* Thu Aug 05 2004 Tibor Pittich <Tibor.Pittich@mandrake.org> 1:0.55-1mdk
+- 0.55
+- added support to build stable or snapshot versions
+
+* Mon Feb 16 2004 David Walluck <walluck@linux-mandrake.com> 1:0.54-0.20040216.3mdk
+- fix changelog entries
+
+* Sun Feb 15 2004 David Walluck <walluck@linux-mandrake.com> 1:0.54-0.20040216.2mdk
+- bump epoch to fix improper version tag in the 0.53b release
+
+* Sun Feb 15 2004 David Walluck <walluck@linux-mandrake.com> 0:0.54-0.20040216.1mdk
+- 0.54 (20040216)
+
