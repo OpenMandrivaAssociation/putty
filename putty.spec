@@ -1,6 +1,6 @@
 Name:		putty
 Version:	0.63
-Release:	1
+Release:	2
 Summary:	SSH, Telnet and Rlogin client
 License:	MIT
 Group:		Networking/Remote access
