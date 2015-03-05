@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Putty
 Comment=A SSH, Telnet and Rlogin client
+Comment[ru]=Клиент SSH, Telnet и Rlogin
 Exec=putty
 Icon=putty
 Terminal=false
