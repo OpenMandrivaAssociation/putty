@@ -1,6 +1,6 @@
 Name:		putty
-Version:	0.63
-Release:	2
+Version:	0.64
+Release:	1
 Summary:	SSH, Telnet and Rlogin client
 License:	MIT
 Group:		Networking/Remote access
@@ -42,13 +42,13 @@ install -pm 0644 doc/*.html html
 %makeinstall INSTALL="install -p" -C unix
 
 desktop-file-install \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications \
+  --dir %{buildroot}%{_datadir}/applications \
   %{SOURCE1}
 
-install -D -m 644 %{name}48.png %buildroot/%{_datadir}/icons/hicolor/48x48/apps/%name.png
-install -D -m 644 %{name}32.png %buildroot/%{_datadir}/icons/hicolor/32x32/apps/%name.png
-install -D -m 644 %{name}32.png %buildroot/%{_datadir}/icons/%name.png
-install -D -m 644 %{name}16.png %buildroot/%{_datadir}/icons/hicolor/16x16/apps/%name.png
+install -D -m 644 %{name}48.png %{buildroot}/%{_datadir}/icons/hicolor/48x48/apps/%{name}.png
+install -D -m 644 %{name}32.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
+install -D -m 644 %{name}32.png %{buildroot}/%{_datadir}/icons/%{name}.png
+install -D -m 644 %{name}16.png %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/%{name}.png
 
 %files
 %doc LICENCE README CHECKLST.txt html

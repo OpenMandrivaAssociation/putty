@@ -1,5 +1,6 @@
 removed_sources:
   putty-0.62.tar.gz: 5898438614117ee7e3704fc3f30a3c4bf2041380
-sources:
   putty-0.63.tar.gz: 195c0603ef61082b91276faa8d4246ea472bba3b
+sources:
+  putty-0.64.tar.gz: 633fe0906a768f9843e328cafa3eed1ad1c02c59
   putty-icons.tar.bz2: 62122c2b42ecaff7cb91f18d8f51f71261a91951
