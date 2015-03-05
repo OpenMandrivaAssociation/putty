@@ -11,6 +11,7 @@ Source2:	%{name}-icons.tar.bz2
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	halibut
 BuildRequires:	desktop-file-utils
+BuildRequires:	perl(Digest::SHA)
 
 %description
 This is the Unix port of the popular Windows ssh client, PuTTY. It
