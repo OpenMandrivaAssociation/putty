@@ -1,5 +1,5 @@
 Name:		putty
-Version:	0.64
+Version:	0.71
 Release:	1
 Summary:	SSH, Telnet and Rlogin client
 License:	MIT
@@ -8,7 +8,7 @@ URL:		http://www.chiark.greenend.org.uk/~sgtatham/putty/
 Source0:	http://the.earth.li/~sgtatham/putty/latest/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}-icons.tar.bz2
-BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	halibut
 BuildRequires:	desktop-file-utils
 BuildRequires:	perl(Digest::SHA)
