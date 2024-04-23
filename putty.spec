@@ -1,5 +1,5 @@
 Name:		putty
-Version:	0.80
+Version:	0.81
 Release:	1
 Summary:	SSH, Telnet and Rlogin client
 License:	MIT
