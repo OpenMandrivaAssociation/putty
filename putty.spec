@@ -4,7 +4,7 @@ Release:	1
 Summary:	SSH, Telnet and Rlogin client
 License:	MIT
 Group:		Networking/Remote access
-URL:		http://www.chiark.greenend.org.uk/~sgtatham/putty/
+URL:		https://www.chiark.greenend.org.uk/~sgtatham/putty/
 Source0:	http://the.earth.li/~sgtatham/putty/latest/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}-icons.tar.bz2
